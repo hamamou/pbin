@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using pbin;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateSlimBuilder(args);
 var connectionString = GetConnectionString(builder);
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 var app = builder.Build();
